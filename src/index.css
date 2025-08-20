@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* small global styles */
+:root {
+  --brand: #0ea5a4;
+  --accent: #f59e0b;
+}
+
+body {
+  @apply bg-white text-gray-800;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
