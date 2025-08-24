@@ -80,7 +80,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {open && (
-        <div className="md:hidden mt-4 bg-white/60 backdrop-blur-lg rounded-xl shadow-lg p-4 border border-white/30">
+        <div className="md:hidden mt-4 bg-white/60 backdrop-blur-lg rounded-xl  p-4 border border-white/30">
           <nav className="flex flex-col space-y-4 text-lg">
             {navItems.map((item) => (
               <NavLink

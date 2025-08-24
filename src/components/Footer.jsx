@@ -35,9 +35,19 @@ export default function Footer() {
       </div>
 
       {/* Bottom - Made by */}
-      <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-600">
-        Made with ❤️ by <span className="font-semibold">Introvert</span>
-      </div>
+     {/* Bottom - Made by */}
+<div className="border-t border-gray-200 py-4 text-center text-sm text-gray-600">
+  Made with ❤️ by{" "}
+  <a 
+    href="https://instagram.com/_introvert7" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    className="font-semibold hover:text-pink-600 transition-colors"
+  >
+    Introvert
+  </a>
+</div>
+
     </footer>
   );
 }
