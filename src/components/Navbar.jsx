@@ -40,11 +40,11 @@ export default function Navbar() {
       ref={navbarRef}
       className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[96%] md:w-[94%] bg-white/50 backdrop-blur-lg shadow-lg rounded-3xl px-8 py-3 z-50 border-2 border-blue-300 opacity-0"
     >
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="flex flex-row md:flex-row items-center justify-between gap-2">
         {/* Logo */}
         <Link
           to="/"
-          className="text-2xl font-bold text-blue-700 hover:text-blue-800 transition-colors"
+          className="text-xl font-bold text-blue-700 hover:text-blue-800 transition-colors"
         >
           Innovation Academy
         </Link>

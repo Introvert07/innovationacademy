@@ -36,61 +36,56 @@ const courses = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { staggerChildren: 0.15 },
   },
 };
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 export default function Courses() {
   return (
-    <div className="container mx-auto px-4 pt-[120px] pb-12">
-      <h1 className="text-4xl font-bold text-blue-700 mb-10 text-center">
-        Our Courses
-      </h1>
+    <section className="relative bg-gradient-to-b from-blue-50 via-white to-blue-50 py-24 pt-26">
+      <div className="container mx-auto px-6">
+        <h1 className="text-5xl font-extrabold text-blue-700 mb-6 text-center">
+          Our Courses
+        </h1>
+        <p className="text-center text-lg text-gray-700 mb-12">
+          Registration Fee: <span className="font-semibold">₹500</span> <br />
+          Physics, Chemistry, Maths: <span className="font-semibold">₹10,000</span> per subject per session
+        </p>
 
-      <motion.div
-        className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        {courses.map((course, i) => (
-          <motion.div
-            key={i}
-            variants={cardVariants}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            className="bg-white rounded-2xl p-6 cursor-pointer border border-blue-200
-                       hover:bg-blue-700 hover:text-white
-                       hover:border-blue-700
-                       transition-colors duration-300 ease-in-out"
-          >
-            <h2 className="text-xl font-semibold mb-2">{course.title}</h2>
-            <p className="mb-4">{course.subtitle}</p>
-            <ul className="list-disc list-inside space-y-1">
-              {course.bullets.map((bullet, idx) => (
-                <li
-                  key={idx}
-                  className="transition-colors duration-300 ease-in-out
-                             hover:text-white"
-                >
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        ))}
-      </motion.div>
-    </div>
+        <motion.div
+          className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {courses.map((course, i) => (
+            <motion.div
+              key={i}
+              variants={cardVariants}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="relative overflow-hidden rounded-3xl p-8 cursor-pointer border border-blue-200
+                         shadow-lg transition-all duration-500 ease-in-out group
+                         before:absolute before:inset-0 before:bg-blue-500 before:translate-y-full before:origin-bottom
+                         before:transition-transform before:duration-500 before:ease-in-out
+                         hover:before:translate-y-0 hover:text-white"
+            >
+              <h2 className="text-2xl font-bold mb-3 relative z-10">{course.title}</h2>
+              <p className="mb-4 relative z-10">{course.subtitle}</p>
+              <ul className="list-disc list-inside space-y-1 relative z-10">
+                {course.bullets.map((bullet, idx) => (
+                  <li key={idx}>{bullet}</li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 }

@@ -24,7 +24,7 @@ export default function About() {
   };
 
   return (
-    <div className="bg-gray-50 pt-20">
+    <div className="bg-gray-50 pt-24">
       <motion.section
         className="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-10"
         variants={containerVariants}

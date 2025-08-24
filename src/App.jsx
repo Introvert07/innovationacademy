@@ -6,6 +6,8 @@ import About from "./Pages/About";
 import Courses from "./Pages/Courses";
 import Contact from "./Pages/Contact";
 import WhatsAppButton from "./components/WhatsAppButton"; // Import your WhatsApp button
+import Gallery from "./Pages/Gallery";
+import Faculty from "./Pages/Faculty";
 
 export default function App() {
   return (
@@ -17,6 +19,11 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/faculty" element={<Faculty />} />
+
+
+
 
         </Routes>
       </main>
